@@ -37,7 +37,7 @@ button:active{transform:scale(.98)}
  .actions button{padding:9px 7px}
 }
 
-.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#e8eee5,#e7e1d4);color:#687467;font:600 12px system-ui;letter-spacing:.04em;text-align:center;padding:16px}.source{font-size:10px;color:#7b8178;text-decoration:none}.source:hover{text-decoration:underline}</style></head><body>
+.image-credit{font-size:10px;color:#7b8178;padding:4px 12px 0}.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#e8eee5,#e7e1d4);color:#687467;font:600 12px system-ui;letter-spacing:.04em;text-align:center;padding:16px}.source{font-size:10px;color:#7b8178;text-decoration:none}.source:hover{text-decoration:underline}</style></head><body>
 <header><div class="eyebrow">A little field guide for your trip</div><h1>Vietnam, in the things you bring home.</h1><p>A visual shopping shortlist for gifts, keepsakes, food and useful finds — organised by who they're for. Browse, add quantities and keep an eye on your estimated spend in rupees.</p></header>
 <main class="wrap"><div class="toolbar"><input id="q" placeholder="Search gifts, materials, ideas…"><select id="who"><option value="">Every recipient</option></select><select id="cat"><option value="">Every category</option></select></div><div class="layout"><section><div class="count" id="count"></div><div class="grid" id="grid"></div></section><aside><h2>Your shopping cart</h2><div class="muted">Selections are saved in this browser.</div><div id="cart"></div><div class="totals"><div class="total"><span>Estimated low</span><b id="low">₹0</b></div><div class="total"><span>Estimated high</span><b id="high">₹0</b></div><div class="muted" id="items">0 items</div></div><button class="full" id="copy">Copy shopping list</button><button class="full secondary" id="clear">Clear cart</button><p class="note">Prices are planning estimates, not live quotes. Use the filters to shop recipient by recipient.</p></aside></div></main>
 <footer>Images are keyword-matched visual references and may vary; they are not verified product listings. Check fabric, materials, quality, sizing, current prices and Indian customs rules before buying. Avoid wildlife-derived materials such as ivory, coral and tortoiseshell.</footer>
@@ -105,20 +105,20 @@ const IMG={
 "Embroidered cap":["https://product.hstatic.net/1000357687/product/non-vietnamienartboard-1_3f849bc9ba7b4db387c7bedbf6df0f82.png","Grimm DC"],
 "Vietnamese silver pendant":["https://ddreamer.com.vn/cdn/shop/files/silverjewelry-ddreamerjewelry-0484.jpg?v=1749312950&width=533","Ddreamer Jewelry"],
 "Pearl hair clip":["https://leletny.com/cdn/shop/files/0005_LELHR24-1974-PEARL_jpg_600x600_crop_center.jpg?v=1770319232","LELET NY"],
-"Mini ceramic vase":["https://battrangceramics.com/User_folder_upload/admin/images/2025/am-chen/january/bo-am-chen-tich-bat-trang-so-1-hoa-4-la.jpg","Bat Trang Ceramics"],
+"Mini ceramic vase":["https://baseec-img-mng.akamaized.net/images/item/origin/c1f663fadd0baf7281693f228e3b1ecf.png?imformat=generic","Bat Trang — bud vase"],
 "Hand-painted ceramic mug":["https://baseec-img-mng.akamaized.net/images/item/origin/dec26ce91ee0f79ba110f10fe3c28785.jpg?im=Resize%2Cwidth%3D1280%2Ctype%3Dnormal&imformat=generic&q=90","Bat Trang mug seller"],
 "Lacquer jewellery box":["https://sonmaivietnam.vn/www/uploads/images/H%E1%BB%98P%20TRANG%20S%E1%BB%A8C%20VU%C3%94NG%2012X12%20HOA%20SEN%20%283%29.jpg","MyNgheViet"],
-"Wedding gift lacquer keepsake box":["https://sonmaivietnam.vn/www/uploads/images/H%E1%BB%98P%20TRANG%20S%E1%BB%A8C%20VU%C3%94NG%2012X12%20HOA%20SEN%20%283%29.jpg","MyNgheViet"],
-"Silk couple scarves":["https://folk-form.com/cdn/shop/files/folk_form_dragon_dreams_90cm_navy_blue_mulberry_silk_scarf_handmade_traditional_vietnamese_art_great_gifts_for_art_lovers_KH0001TW400265_3.png?v=1751738032&width=1445","Folk Form"],
-"Premium tea gift set":["https://trahoasen.vn/wp-content/uploads/2019/12/Hop-tra-sen-cao-cap-20b.jpg","Minh Cuong Lotus Tea"],
+"Wedding gift lacquer keepsake box":["https://i.etsystatic.com/18366534/r/il/02d222/7498253940/il_fullxfull.7498253940_kgr8.jpg","Etsy — Vietnamese lacquerware"],
+"Silk couple scarves":["https://folk-form.com/cdn/shop/collections/folk_form_and_global_b2b_magazine_art_inspired_luxury_silk_products_gifts_with_meaning_123ca0f7-81f1-47ea-94f7-ba8da5ba969c.png?v=1770825057","Folk Form — scarves"],
+"Premium tea gift set":["https://vietnam-porter.jp/html/upload/save_image/_530cdce9.webp","Vietnam Porter — lotus tea gift set"],
 "Marou chocolate":["https://images.cokolada.cz/obr/feedAndExternalApps/2raql406oft0/marou-78-horka-cokolada-vietnam-ben-tre-grand-cru-80-g.png","Cokolada"],
 "Dried mango":["https://havamall.com/wp-content/uploads/2020/05/sdsds-1.jpg","HavaMall"],
 "Coconut candy":["https://bentredonga.com/wp-content/uploads/2025/09/H%E1%BB%99p-12-thanh-4-v%E1%BB%8B_1.jpg","Ben Tre Dong A"],
 "Dried jackfruit":["https://www.hanoji.eu/cdn/shop/files/Vinamit_dried_jackfruit_210g.jpg?v=1773568988&width=1946","Hanoji"],
 "Cashews":["https://lafoocostore.vn/upload/products/thumb_800x0/-1667361183.jpg","Lafooco"],
 "G7 instant coffee sachets":["https://www.rakuten.ne.jp/gold/ec-tokoplus/cabinet/kaigaiomiyage/asia/179200600_main03.jpg","TokoPlus"],
-"Vietnam map magnet":["https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mos1wh1miy9s20","Shopee seller"],
-"Postcard set":["https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mos1wh1miy9s20","Shopee seller"],
+"Vietnam map magnet":["https://m.buchiza.com/web/product/big/202401/0d6e29f583971b030543388fd113f212.jpg","Buchiza — Vietnam map magnet"],
+"Postcard set":["https://static.wixstatic.com/media/42060a_7d8c4c0c1bf344ebb18130bf208f88eb~mv2.jpg/v1/fill/w_4000%2Ch_4000%2Cal_c%2Cq_90%2Cenc_avif%2Cquality_auto/42060a_7d8c4c0c1bf344ebb18130bf208f88eb~mv2.jpg","Zó Project — Hoi An postcards"],
 "Vintage-style travel poster":["https://a.1stdibscdn.com/archivesE/upload/1121189/f_350591921688494954065/35059192_datamatics.jpg","1stDibs"],
 "Conical hat (Non La)":["https://www.autourasia.com/uploads/Useful-infos/conical-hat-vietnam/700-non-bai-tho.jpg","Autour Asia"],
 "Golden Star Balm":["https://static.ticimax.cloud/cdn-cgi/image/width%3D540%2Cquality%3D85%2Cformat%3Dwebp/68966/Uploads/UrunResimleri/buyuk/golden-star-balm-vietnam-balsami-caa-2d.jpg","Omka Online"],
@@ -126,11 +126,37 @@ const IMG={
 "Leather belt":["https://bizweb.dktcdn.net/thumb/grande/100/013/105/products/bb24-belt-copy.jpg?v=1443697032940","SHEN"],
 "Passport holder":["https://product.hstatic.net/1000035778/product/travel_orange_1_d6995849f68949cd80f5c069ed45a80d.jpg","Tudo Origin"],
 "Bamboo straws set":["https://www.jm-bamboolife.com/Uploads/5f115a98d17062511.jpg","Jungle Straws"]
+
+"Embroidered linen blouse":["https://kamaka.vn/cdn/shop/files/1_557661f1-e9b1-4209-8c1e-63c0362b1511_800x.jpg?v=1712141210","Kamaka Vietnam"],
+
+"Lacquer serving tray":["https://tanmydesign.com/temp/-uploaded-san-pham-Son%20mai-Khay%20son%20mai-2024_PAS030041-9-1250-1_cr_720x720.JPG","Tan My Design"],
+
+"Woven placemat set":["https://i.etsystatic.com/24758910/r/il/5387a5/5964259253/il_794xN.5964259253_kmh4.jpg","Etsy — handwoven rattan"],
+
+"Silk pillow covers":["https://www.usemeworks.com/cdn/shop/files/rn-image_picker_lib_temp_8a875da9-bdd9-4c7f-8785-0cf99f3c5e14.jpg?v=1710501409&width=1445","Use Me Works — silk patchwork"],
+
+"Bamboo desk organiser":["https://gcs.tripi.vn/public-tripi/tripi-feed/img/481140AXR/anh-mo-ta.png","Mytour — bamboo desk organiser"],
+
+"Wooden pen holder":["https://godinh.com/web/image/product.template/59349/image_1024","Go Dinh — wooden pen holder"],
+
+"Handmade beaded bracelet":["https://cdn.chus.vn/images/thumbnails/850/566/detailed/191/1640768290_10338-04-c1.jpg","CHUS — handmade bracelets"],
+
+"Silk scrunchie set":["https://res.cloudinary.com/wolfandbadger/image/upload/f_auto%2Cq_auto%3Abest%2Cc_pad%2Cb_white%2Ch_800%2Cw_800/products/set-of-5-large-mulberry-silk-jacquard-hair-scrunchies-handmade__c51e0bc3003cf5ec2835914fba07f8fb","Wolf & Badger — Silk and Bears"],
+
+"Linen summer dress":["https://product.hstatic.net/1000215898/product/1__85__631a3088b45c4e74a0a25191c6d70649.jpg","Ninh Khuong"],
+
+"Decorative lantern":["https://www.exoticvoyages.com/uploads/images/userfiles/2018/11/Hoi-An-Vietnam-3.jpg","Exotic Voyages — Hoi An lanterns"],
+
+"Custom name bracelet":["https://bizweb.dktcdn.net/100/090/662/files/dong-ho-vong-tay-7.jpg?v=1486712423029","Viet Gift Center"],
+
+"Miniature cyclo":["https://sudospaces.com/vietcenter/2021/07/cyclo-souvenir.jpg","Viet Center Tourist"],
+
+"Foldable shopping bag":["https://images.squarespace-cdn.com/content/v1/5d95641302785c6b188e4075/1628805391581-RKY3VXKV50C1F7M48CVB/2.jpg","Vietnam Ca-phe Project"],
 };
 const $=s=>document.querySelector(s), money=n=>"₹"+n.toLocaleString("en-IN");let cart=JSON.parse(localStorage.getItem("vn-cart")||"{}"),wish=JSON.parse(localStorage.getItem("vn-wish")||"[]");
 [...new Set(P.map(x=>x.who))].sort().forEach(x=>$("#who").add(new Option(x,x)));[...new Set(P.map(x=>x.cat))].sort().forEach(x=>$("#cat").add(new Option(x,x)));
 function save(){localStorage.setItem("vn-cart",JSON.stringify(cart));localStorage.setItem("vn-wish",JSON.stringify(wish))}
-function render(){let q=$("#q").value.toLowerCase(),w=$("#who").value,c=$("#cat").value,L=P.filter(p=>(!w||p.who===w)&&(!c||p.cat===c)&&(!q||(p.name+" "+p.desc+" "+p.who+" "+p.cat).toLowerCase().includes(q)));$("#count").textContent="Showing "+L.length+" of "+P.length+" ideas · estimates in INR";$("#grid").innerHTML=L.map(p=>'<article class="card">'+(IMG[p.name]?'<img class="photo" loading="lazy" src="'+IMG[p.name][0]+'" alt="'+p.name+'" onerror="this.outerHTML=\'<div class=\\\'photo placeholder\\\'>Image unavailable</div>\'">':'<div class="photo placeholder">Image being curated</div>')+'<div class="body"><div class="meta"><span>'+p.cat+'</span><span>'+p.who+'</span></div><h3>'+p.name+'</h3><div class="desc">'+p.desc+'</div><div class="price">'+money(p.lo)+'–'+money(p.hi)+'</div><div class="actions"><button class="add" onclick="add('+p.id+')">Add to cart</button><button class="wish" onclick="toggleWish('+p.id+')">'+(wish.includes(p.id)?"♥":"♡")+'</button></div></div></article>').join("")||'<div class="empty">No matches. Try another filter.</div>';renderCart()}
+function render(){let q=$("#q").value.toLowerCase(),w=$("#who").value,c=$("#cat").value,L=P.filter(p=>(!w||p.who===w)&&(!c||p.cat===c)&&(!q||(p.name+" "+p.desc+" "+p.who+" "+p.cat).toLowerCase().includes(q)));$("#count").textContent="Showing "+L.length+" of "+P.length+" ideas · estimates in INR";$("#grid").innerHTML=L.map(p=>'<article class="card">'+(IMG[p.name]?'<img class="photo" loading="lazy" decoding="async" referrerpolicy="no-referrer" src="'+IMG[p.name][0]+'" alt="'+p.name+'" onerror="this.outerHTML=\\'<div class=\\\\\\'photo placeholder\\\\\\'>Image failed to load</div>\\'"><div class="image-credit">Image reference: '+IMG[p.name][1]+'</div>':'<div class="photo placeholder">Image mapping missing</div>')+'<div class="body"><div class="meta"><span>'+p.cat+'</span><span>'+p.who+'</span></div><h3>'+p.name+'</h3><div class="desc">'+p.desc+'</div><div class="price">'+money(p.lo)+'–'+money(p.hi)+'</div><div class="actions"><button class="add" onclick="add('+p.id+')">Add to cart</button><button class="wish" onclick="toggleWish('+p.id+')">'+(wish.includes(p.id)?"♥":"♡")+'</button></div></div></article>').join("")||'<div class="empty">No matches. Try another filter.</div>';renderCart()}
 function add(id){cart[id]=(cart[id]||0)+1;save();render()}function change(id,n){cart[id]=(cart[id]||0)+n;if(cart[id]<=0)delete cart[id];save();render()}function toggleWish(id){wish=wish.includes(id)?wish.filter(x=>x!==id):[...wish,id];save();render()}
 function renderCart(){const cartScroll=$("#cart").scrollTop;let E=Object.entries(cart).map(([id,n])=>({p:P.find(p=>p.id==id),n})).filter(x=>x.p);$("#cart").innerHTML=E.length?E.map(({p,n})=>'<div class="line"><div><strong>'+p.name+'</strong><small>'+p.who+' · '+money(p.lo)+'–'+money(p.hi)+' each</small></div><div class="qty"><button onclick="change('+p.id+',-1)">−</button><b>'+n+'</b><button onclick="change('+p.id+',1)">+</button></div></div>').join(""):'<div class="empty" style="margin-top:12px">Your cart is empty. Add something lovely.</div>';$("#cart").scrollTop=cartScroll;let lo=0,hi=0,count=0;E.forEach(({p,n})=>{lo+=p.lo*n;hi+=p.hi*n;count+=n});$("#low").textContent=money(lo);$("#high").textContent=money(hi);$("#items").textContent=count+" items across "+E.length+" product types"}
 $("#q").addEventListener("input",render);$("#who").addEventListener("change",render);$("#cat").addEventListener("change",render);$("#clear").onclick=()=>{if(confirm("Clear your cart?")){cart={};save();render()}};$("#copy").onclick=()=>{let lines=["VIETNAM SHOPPING LIST",""];Object.entries(cart).forEach(([id,n])=>{let p=P.find(x=>x.id==id);if(p)lines.push(n+" × "+p.name+" — "+p.who+" — "+money(p.lo*n)+"–"+money(p.hi*n))});lines.push("","Estimated totals: "+$("#low").textContent+"–"+$("#high").textContent);navigator.clipboard.writeText(lines.join("\n")).then(()=>alert("Shopping list copied!")).catch(()=>alert(lines.join("\n")))};render();
